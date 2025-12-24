@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Story 💜</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(180deg,#e7c9ff,#f6e9ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.card{
+  background:#fff;
+  width:90%;
+  max-width:350px;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+h1,h2{
+  color:#7b3fe4;
+}
+
+input{
+  width:90%;
+  padding:12px;
+  border-radius:20px;
+  border:2px solid #c7a6ff;
+  outline:none;
+  font-size:16px;
+  text-align:center;
+}
+
+button{
+  margin-top:15px;
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:#9b5cff;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#7b3fe4;
+}
+
+.hidden{display:none;}
+
+img{
+  width:100%;
+  border-radius:15px;
+  margin-top:10px;
+}
+
+.audio-card{
+  background:#9b5cff;
+  color:white;
+  padding:15px;
+  border-radius:15px;
+  margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD PAGE -->
+<div class="card" id="lock">
+  <h2>Enter Password 💜</h2>
+  <input type="password" id="pass" placeholder="••••">
+  <br>
+  <button onclick="unlock()">Unlock 💜</button>
+</div>
+
+<!-- MAIN PAGE -->
+<div class="card hidden" id="content">
+  <h1>💌 My Love Letter</h1>
+  <p>
+    From the very first moment I met you,<br>
+    you became my favorite story 💜
+  </p>
+
+  <div class="audio-card">
+    <p>🎵 Our Song</p>
+    <audio controls style="width:100%;">
+      <source src="SONG_LINK_HERE">
+    </audio>
+  </div>
+
+  <h2>📸 Our Memories</h2>
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+</div>
+
+<script>
+function unlock(){
+  const password = document.getElementById("pass").value;
+  if(password === "0817"){
+    document.getElementById("lock").classList.add("hidden");
+    document.getElementById("content").classList.remove("hidden");
+  }else{
+    alert("Wrong password 💔");
+  }
+}
+</script>
+
+</body>
+</html>
